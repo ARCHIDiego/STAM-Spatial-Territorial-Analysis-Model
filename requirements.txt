@@ -1,0 +1,4 @@
+geopandas
+pandas
+folium
+osmnx>=1.9.0
