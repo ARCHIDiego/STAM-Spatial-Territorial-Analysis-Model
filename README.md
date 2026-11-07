@@ -40,8 +40,9 @@ import pandas as pd
 # Execute the modular STAM engine
 from stam_engine import algoritmo_stam_analise_territorial
 
-# Example run for macro-territorial vulnerability assessment
-df_results = algoritmo_stam_analise_territorial(nome_pais='China', raio_buffer_km=150)
+# Example run for real-world transport infrastructure network analysis
+res = fetch_infrastructure_network(place_name="Lanzhou, China", infra_type="transport", buffer_km=5.0)
+print(f"Impact Ratio: {res['impact_ratio_pct']}%")
 ```
 ## Project Roadmap
 [x] Phase 1: Core engine MVP & multi-scalar territorial validation.
