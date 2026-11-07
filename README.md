@@ -46,7 +46,7 @@ df_results = algoritmo_stam_analise_territorial(nome_pais='China', raio_buffer_k
 ## Project Roadmap
 [x] Phase 1: Core engine MVP & multi-scalar territorial validation.
 
-[ ] Phase 2: OSMnx real-world transport & energy infrastructure network ingestion.
+[x] Phase 2: OSMnx real-world transport & energy infrastructure network ingestion.
 
 [ ] Phase 3: Topographic elevation (DEM) & hydrological river basin overlays.
 
