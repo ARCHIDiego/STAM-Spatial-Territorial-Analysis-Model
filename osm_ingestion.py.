@@ -1,0 +1,47 @@
+import osmnx as ox
+import geopandas as gpd
+
+def fetch_infrastructure_network(place_name: str, infra_type: str = "transport", buffer_km: float = 10.0):
+    """
+    Fetches real-world transport or energy infrastructure from OpenStreetMap
+    and generates geodetically accurate buffer corridors.
+    """
+    tags_map = {
+        "transport": {"highway": ["motorway", "trunk", "primary"], "railway": ["rail"]},
+        "energy": {"power": ["line", "minor_line", "substation"]}
+    }
+    
+    if infra_type not in tags_map:
+        raise ValueError("infra_type must be 'transport' or 'energy'")
+
+    # Download administrative boundary and infrastructure features
+    boundary_gdf = ox.geocode_to_gdf(place_name)
+    infra_gdf = ox.features_from_place(place_name, tags=tags_map[infra_type])
+    
+    # Keep valid geometries
+    infra_gdf = infra_gdf[infra_gdf.geometry.type.isin(["LineString", "MultiLineString", "Polygon", "Point"])].copy()
+
+    # Reproject to equal-area CRS (World Mollweide) for accurate metric buffering
+    boundary_proj = boundary_gdf.to_crs("ESRI:54009")
+    infra_proj = infra_gdf.to_crs("ESRI:54009")
+
+    # Generate buffer and clip to territorial boundary
+    buffer_meters = buffer_km * 1000
+    infra_buffer = infra_proj.geometry.buffer(buffer_meters).unary_union
+    territory_geom = boundary_proj.geometry.unary_union
+    impacted_zone = infra_buffer.intersection(territory_geom)
+
+    # Compute areas in km² and Impact Ratio
+    total_area_km2 = territory_geom.area / 1e6
+    impacted_area_km2 = impacted_zone.area / 1e6
+    impact_ratio = (impacted_area_km2 / total_area_km2) * 100
+
+    return {
+        "place": place_name,
+        "infra_type": infra_type,
+        "total_area_km2": round(total_area_km2, 2),
+        "impacted_area_km2": round(impacted_area_km2, 2),
+        "impact_ratio_pct": round(impact_ratio, 2),
+        "impacted_geometry": gpd.GeoSeries([impacted_zone], crs="ESRI:54009").to_crs("EPSG:4326"),
+        "raw_network": infra_gdf.to_crs("EPSG:4326")
+    }
