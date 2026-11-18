@@ -49,7 +49,7 @@ print(f"Impact Ratio: {res['impact_ratio_pct']}%")
 
 [x] Phase 2: OSMnx real-world transport & energy infrastructure network ingestion.
 
-[ ] Phase 3: Topographic elevation (DEM) & hydrological river basin overlays.
+[x] Phase 3: Topographic elevation (DEM) & hydrological river basin overlays.
 
 [ ] Phase 4: Multi-Criteria Evaluation (MCE) for dynamic spatial risk heatmaps.
 
