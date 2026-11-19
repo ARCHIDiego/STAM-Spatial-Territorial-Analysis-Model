@@ -44,8 +44,10 @@ STAM-Spatial-Territorial-Analysis-Model/
 └── LICENSE                     # MIT Open Source License
 
 ## Quick Start (Google Colab / Local Python)
-You can run the fully integrated pipeline using the unified script stam_pipeline_complete.py:
 
+You can run the fully integrated pipeline using the unified script `stam_pipeline_complete.py`:
+
+```python
 import osmnx as ox
 import geopandas as gpd
 import numpy as np
@@ -57,9 +59,9 @@ from IPython.display import display, HTML
 # Execute the complete 4-phase STAM pipeline for any territorial node
 # Example: Barcarena, Brazil (Estuarine/Tropical Node)
 run_stam_pipeline_transparent(
-    place_name="Barcarena, Para, Brazil", 
-    lat=-1.5053, 
-    lon=-48.6256, 
+    place_name="Barcarena, Para, Brazil",
+    lat=-1.5053,
+    lon=-48.6256,
     buffer_km=3.0)
 
 ## **Project Roadmap**
