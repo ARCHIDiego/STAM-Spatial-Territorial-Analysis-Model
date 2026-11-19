@@ -42,8 +42,10 @@ STAM-Spatial-Territorial-Analysis-Model/
 ├── mce_risk_evaluation.py      # Standalone Phase 4: Multi-Criteria Evaluation risk heatmap
 ├── requirements.txt            # Python dependencies (osmnx, geopandas, folium, etc.)
 └── LICENSE                     # MIT Open Source License
+```
+---
 
-## Quick Start (Google Colab / Local Python)
+### **Quick Start (Google Colab / Local Python)**
 
 You can run the fully integrated pipeline using the unified script `stam_pipeline_complete.py`:
 
@@ -62,20 +64,26 @@ run_stam_pipeline_transparent(
     place_name="Barcarena, Para, Brazil",
     lat=-1.5053,
     lon=-48.6256,
-    buffer_km=3.0)
+  buffer_km=3.0)
+```
+---
 
-## **Project Roadmap**
+### **Project Roadmap**
+[x] Phase 1 & 2: Core engine MVP, multi-scalar territorial validation, and OSM road network vector ingestion.
 
-- [x] **Phase 1 & 2:** Core engine MVP, multi-scalar territorial validation, and OSM road network vector ingestion.
-- [x] **Phase 3:** Topographic elevation (DEM) and hydrological river basin/wetland overlays.
-- [x] **Phase 4:** Multi-Criteria Evaluation (MCE) for dynamic spatial risk heatmaps.
-- [x] **Consolidated Reporting:** Automated executive HTML audit matrices and vector-native visualization stability.
+[x] Phase 3: Topographic elevation (DEM) and hydrological river basin/wetland overlays.
 
-## **Author**
+[x] Phase 4: Multi-Criteria Evaluation (MCE) for dynamic spatial risk heatmaps.
 
-**Diego Rodrigues Nascimento**  
-Urban Planner & Spatial Data Science Researcher  
-GitHub: [@ARCHIDiego](https://github.com/ARCHIDiego)
+[x] Consolidated Reporting: Automated executive HTML audit matrices and vector-native visualization stability.
 
+---
+
+### **Author**
+Diego Rodrigues Nascimento
+
+Urban Planner & Spatial Data Science Researcher
+
+GitHub: @ARCHIDiego
 
 
