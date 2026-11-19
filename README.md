@@ -62,21 +62,18 @@ run_stam_pipeline_transparent(
     lon=-48.6256, 
     buffer_km=3.0)
 
-## Project Roadmap
-[x] Phase 1 & 2: Core engine MVP, multi-scalar territorial validation, and OSM road network vector ingestion.
+## **Project Roadmap**
 
-[x] Phase 3: Topographic elevation (DEM) and hydrological river basin/wetland overlays.
+- [x] **Phase 1 & 2:** Core engine MVP, multi-scalar territorial validation, and OSM road network vector ingestion.
+- [x] **Phase 3:** Topographic elevation (DEM) and hydrological river basin/wetland overlays.
+- [x] **Phase 4:** Multi-Criteria Evaluation (MCE) for dynamic spatial risk heatmaps.
+- [x] **Consolidated Reporting:** Automated executive HTML audit matrices and vector-native visualization stability.
 
-[x] Phase 4: Multi-Criteria Evaluation (MCE) for dynamic spatial risk heatmaps.
-
-[x] Consolidated Reporting: Automated executive HTML audit matrices and vector-native visualization stability.
-
-## Author
+## **Author**
 
 **Diego Rodrigues Nascimento**  
 Urban Planner & Spatial Data Science Researcher  
 GitHub: [@ARCHIDiego](https://github.com/ARCHIDiego)
-
 
 
 
